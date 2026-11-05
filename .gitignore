@@ -1,0 +1,6 @@
+node_modules/
+dist/
+*.vsix
+CURRENT_WORK.md
+.desk/
+.playwright-mcp/

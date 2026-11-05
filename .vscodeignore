@@ -1,0 +1,11 @@
+**
+!package.json
+!package.nls.json
+!package.nls.ru.json
+!README.md
+!LICENSE
+!dist/extension.js
+!dist/mcp-server.js
+!dist/webview.js
+!media/board.css
+!media/icon.png

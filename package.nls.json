@@ -1,0 +1,6 @@
+{
+  "command.open": "Open Board",
+  "command.connectClaude": "Connect Claude Code (MCP)",
+  "config.autoOpen": "Open the board next to the agent chat when the agent changes it and the board is not open.",
+  "config.language": "Board interface language. \"auto\" follows VS Code."
+}

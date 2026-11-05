@@ -1,0 +1,23 @@
+{
+	"nodes":[
+		{"id":"focus","type":"text","text":"**Goal this week:** ship the paid plans beta\nFocus today: Stripe webhooks","x":0,"y":-127,"width":420,"height":63,"color":"2","pinned":true,"autoHeight":true},
+		{"id":"now","type":"group","label":"Now","x":0,"y":0,"width":312,"height":289,"color":"3","autoHeight":true},
+		{"id":"hooks","type":"text","text":"**Stripe webhooks**\n- [x] Verify the signature\n- [ ] Handle retries\n- [ ] Logs in `billing/webhooks.ts:42`","x":16,"y":44,"width":280,"height":130,"autoHeight":true},
+		{"id":"plans","type":"text","text":"**Plans**\n- [ ] Prices in config\n- [ ] 14-day trial","x":16,"y":186,"width":280,"height":87,"autoHeight":true},
+		{"id":"next","type":"group","label":"Next","x":336,"y":0,"width":312,"height":242,"autoHeight":true},
+		{"id":"bzlurk","type":"text","text":"**Emails**\n- [ ] Receipt after payment\n- [ ] Reminder 3 days before renewal","x":352,"y":44,"width":280,"height":107,"autoHeight":true},
+		{"id":"8o5xyc","type":"text","text":"**Cancel subscription** from the account page","x":352,"y":163,"width":280,"height":63,"autoHeight":true},
+		{"id":"done","type":"group","label":"Done","x":672,"y":0,"width":312,"height":246,"color":"4","autoHeight":true},
+		{"id":"s4l9uw","type":"text","text":"**Data model**\n- [x] `Subscription` table\n- [x] Migrations","x":688,"y":44,"width":280,"height":87,"autoHeight":true},
+		{"id":"mhvuwx","type":"text","text":"**Pricing page**\n- [x] Copy\n- [x] Plan comparison","x":688,"y":143,"width":280,"height":87,"autoHeight":true},
+		{"id":"checkout","type":"text","text":"**Checkout Session**\nthe user pays on Stripe","x":0,"y":321,"width":269,"height":63,"autoHeight":true},
+		{"id":"webhook","type":"text","text":"**Webhook**\n`checkout.session.completed`","x":357,"y":321,"width":269,"height":63,"color":"3","autoHeight":true},
+		{"id":"db","type":"text","text":"**Database**\nthe subscription is active","x":714,"y":321,"width":269,"height":63,"autoHeight":true},
+		{"id":"risk","type":"text","text":"**Risk:** the webhook can arrive twice, so the handler must be idempotent","x":357,"y":416,"width":269,"height":83,"color":"1","autoHeight":true}
+	],
+	"edges":[
+		{"id":"d1l6ti","fromNode":"checkout","toNode":"webhook","label":"event"},
+		{"id":"b38oaj","fromNode":"webhook","toNode":"db","label":"write"},
+		{"id":"9ackzo","fromNode":"risk","toNode":"webhook"}
+	]
+}

@@ -1,0 +1,101 @@
+{
+  "name": "desk",
+  "displayName": "Desk — a whiteboard next to your AI agent",
+  "description": "A whiteboard tab next to your AI agent. The agent writes goals, focus, task lists and diagrams through MCP; you move cards, edit text, tick tasks.",
+  "version": "0.1.0",
+  "publisher": "celer",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MAGLeb/desk"
+  },
+  "bugs": {
+    "url": "https://github.com/MAGLeb/desk/issues"
+  },
+  "homepage": "https://github.com/MAGLeb/desk#readme",
+  "icon": "media/icon.png",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Visualization",
+    "Other"
+  ],
+  "keywords": [
+    "whiteboard",
+    "canvas",
+    "mcp",
+    "claude",
+    "json canvas"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "desk.board",
+        "displayName": "Desk Board",
+        "selector": [
+          {
+            "filenamePattern": "*.canvas"
+          }
+        ],
+        "priority": "default"
+      }
+    ],
+    "commands": [
+      {
+        "command": "desk.open",
+        "title": "%command.open%",
+        "category": "Desk",
+        "icon": "$(layout)"
+      },
+      {
+        "command": "desk.connectClaude",
+        "title": "%command.connectClaude%",
+        "category": "Desk"
+      }
+    ],
+    "configuration": {
+      "title": "Desk",
+      "properties": {
+        "desk.autoOpen": {
+          "type": "boolean",
+          "default": true,
+          "description": "%config.autoOpen%"
+        },
+        "desk.language": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "en",
+            "ru"
+          ],
+          "default": "auto",
+          "description": "%config.language%"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "watch": "node scripts/build.mjs --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "node scripts/build.mjs && node --test dist/test/mcp.test.cjs",
+    "package": "node scripts/build.mjs && vsce package --no-dependencies -o desk.vsix"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "markdown-it": "^15.0.3"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^20.17.0",
+    "@types/vscode": "1.90.0",
+    "@vscode/vsce": "^4.1.0",
+    "esbuild": "^0.28.2",
+    "typescript": "^5.6.3"
+  }
+}

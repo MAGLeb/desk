@@ -1,0 +1,6 @@
+{
+  "command.open": "Открыть доску",
+  "command.connectClaude": "Подключить Claude Code (MCP)",
+  "config.autoOpen": "Открывать доску рядом с чатом агента, когда агент её меняет, а доска закрыта.",
+  "config.language": "Язык интерфейса доски. \"auto\" — как в VS Code."
+}
